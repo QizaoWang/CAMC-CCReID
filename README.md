@@ -17,7 +17,7 @@
 
 ### Prepare Data
 
-Please download the [Celeb-reID](https://github.com/Huang-3/Celeb-reID) dataset and place it in any path `DATASET_ROOT`.
+Please download cloth-changing person Re-ID datasets and place them in any path `DATASET_ROOT`. Take [Celeb-reID](https://github.com/Huang-3/Celeb-reID) as an example:
 
     DATASET_ROOT
     	└─ Celeb-reID
@@ -45,7 +45,22 @@ python main.py --gpu_devices 0 --pose_net_path POSE_NET_PATH --dataset celeb --d
 
 `--resume`: replace `RESUME_PATH ` with the path of the saved checkpoint
 
+### Results
 
+- **Celeb-reID**
+
+| Backbone  | Rank-1 | Rank-5 | mAP  |
+| :-------: | :----: | :----: | :--: |
+| ResNet-50 |  57.5  |  71.5  | 12.3 |
+
+- **LTCC**
+
+| Backbone  |    Setting     | Rank-1 | mAP  |
+| :-------: | :------------: | :----: | :--: |
+| ResNet-50 | Cloth-Changing |  36.0  | 15.4 |
+| ResNet-50 |    Standard    |  73.2  | 35.3 |
+
+You can achieve similar results with released codes.
 
 ## Citation
 
