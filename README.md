@@ -1,11 +1,10 @@
 # Co-Attention Aligned Mutual Cross-Attention for Cloth-Changing Person Re-Identification
 
-> Official PyTorch implementation of ["Co-Attention Aligned Mutual Cross-Attention for Cloth-Changing Person Re-Identification"](https://openaccess.thecvf.com/content/ACCV2022/papers/Wang_Co-Attention_Aligned_Mutual_Cross-Attention_for_Cloth-Changing_Person_Re-Identification_ACCV_2022_paper.pdf). (ACCV 2022 Oral)
+> Official PyTorch implementation of ["Co-Attention Aligned Mutual Cross-Attention for Cloth-Changing Person Re-Identification"](https://openaccess.thecvf.com/content/ACCV2022/html/Wang_Co-Attention_Aligned_Mutual_Cross-Attention_for_Cloth-Changing_Person_Re-Identification_ACCV_2022_paper.html). (ACCV 2022 Oral)
 >
 > Qizao Wang, Xuelin Qian, Yanwei Fu, Xiangyang Xue
 >
 > Fudan University
-
 
 
 ## Getting Started
@@ -23,7 +22,7 @@ Please download cloth-changing person Re-ID datasets and place them in any path 
     	└─ Celeb-reID
     		├── train
     		├── query
-    		├── gallery
+    		└── gallery
 
 ### Training
 
@@ -31,11 +30,11 @@ Please download cloth-changing person Re-ID datasets and place them in any path 
 python main.py --gpu_devices 0 --pose_net_path POSE_NET_PATH --dataset celeb --dataset_root DATASET_ROOT --dataset_filename Celeb-reID --save_dir SAVE_DIR --save_checkpoint
 ```
 
-`--pose_net_path ` : replace `POSE_NET_PATH` with the path of pretrained [HRNet](https://github.com/leoxiaobin/deep-high-resolution-net.pytorch) weights (download [here](https://drive.google.com/file/d/10ZfIsFgReAGdDwOZSoc4URPM7dt4EEXz/view?usp=sharing))
+`--pose_net_path` : replace `POSE_NET_PATH` with the path of pretrained [HRNet](https://github.com/leoxiaobin/deep-high-resolution-net.pytorch) weights (download [here](https://drive.google.com/file/d/10ZfIsFgReAGdDwOZSoc4URPM7dt4EEXz/view?usp=sharing))
 
-`--dataset_root ` : replace `DATASET_ROOT` with your dataset root path
+`--dataset_root` : replace `DATASET_ROOT` with your dataset root path
 
-`--save_dir`: replace `SAVE_DIR ` with the path to save log files and checkpoints
+`--save_dir`: replace `SAVE_DIR` with the path to save log files and checkpoints
 
 ### Evaluation
 
@@ -43,7 +42,7 @@ python main.py --gpu_devices 0 --pose_net_path POSE_NET_PATH --dataset celeb --d
 python main.py --gpu_devices 0 --pose_net_path POSE_NET_PATH --dataset celeb --dataset_root DATASET_ROOT --dataset_filename Celeb-reID --resume RESUME_PATH --save_dir SAVE_DIR --evaluate
 ```
 
-`--resume`: replace `RESUME_PATH ` with the path of the saved checkpoint
+`--resume`: replace `RESUME_PATH` with the path of the saved checkpoint
 
 ### Results
 
@@ -60,23 +59,24 @@ python main.py --gpu_devices 0 --pose_net_path POSE_NET_PATH --dataset celeb --d
 | ResNet-50 | Cloth-Changing |  36.0  | 15.4 |
 | ResNet-50 |    Standard    |  73.2  | 35.3 |
 
-You can achieve similar results with released codes.
+You can achieve similar results with released code.
+
+For implementation simplicity, the code in the repository does not support the cloth-changing setting on the LTCC dataset.
+Please refer to our latest work, [FIRe-CCReID](https://github.com/QizaoWang/FIRe-CCReID) or [CSSC-CCReID](https://github.com/QizaoWang/CSSC-CCReID), which includes additional functionality and code for other datasets.
 
 ## Citation
 
 Please cite the following paper in your publications if it helps your research:
 
 ```
-@InProceedings{Wang_2022_ACCV,
-    author    = {Wang, Qizao and Qian, Xuelin and Fu, Yanwei and Xue, Xiangyang},
-    title     = {Co-Attention Aligned Mutual Cross-Attention for Cloth-Changing Person Re-Identification},
-    booktitle = {Proceedings of the Asian Conference on Computer Vision (ACCV)},
-    month     = {December},
-    year      = {2022},
-    pages     = {2270-2288}
+@inproceedings{wang2022co,
+  title={Co-attention aligned mutual cross-attention for cloth-changing person re-identification},
+  author={Wang, Qizao and Qian, Xuelin and Fu, Yanwei and Xue, Xiangyang},
+  booktitle={Proceedings of the Asian Conference on Computer Vision},
+  pages={2270--2288},
+  year={2022}
 }
 ```
-
 
 
 ## Contact

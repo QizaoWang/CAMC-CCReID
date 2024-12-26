@@ -1,3 +1,12 @@
+"""
+@author:  Qizao Wang
+@contact: qzwang22@m.fudan.edu.cn
+
+ACCV 2022 Oral paper: Co-Attention Aligned Mutual Cross-Attention for Cloth-Changing Person Re-Identification
+URL: https://openaccess.thecvf.com/content/ACCV2022/html/Wang_Co-Attention_Aligned_Mutual_Cross-Attention_for_Cloth-Changing_Person_Re-Identification_ACCV_2022_paper.html
+GitHub: https://github.com/QizaoWang/CAMC-CCReID
+"""
+
 from __future__ import absolute_import
 import sys
 import time
